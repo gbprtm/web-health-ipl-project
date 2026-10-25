@@ -16,7 +16,7 @@ Jangan mengubah status tugas milik agen lain.
 
 | ID | Status | Commit | Catatan |
 |---|---|---|---|
-| A01 | done | 6197817 | — |
+| A01 | done | f14d535 | — |
 | A02 | todo | — | — |
 | A03 | todo | — | — |
 | A04 | todo | — | — |
