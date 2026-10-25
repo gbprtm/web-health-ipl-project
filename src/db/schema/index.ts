@@ -1,2 +1,2 @@
-// src/db/schema/index.ts - Titik masuk skema tabel database
-export {};
+// src/db/schema/index.ts - Titik sentral seluruh skema Drizzle ORM
+export * from "./auth";
