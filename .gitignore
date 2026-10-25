@@ -30,6 +30,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # OS & Editor
+*.exe
 .DS_Store
 Thumbs.db
 *.pem

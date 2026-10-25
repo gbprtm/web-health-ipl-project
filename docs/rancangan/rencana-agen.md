@@ -65,7 +65,7 @@ Satu tugas = satu commit. Format pesan: `A01: rapikan repo`.
 |---|---|
 `id` | Kode unik, dipakai di commit dan bukti |
 `fase` | F0 fondasi, F1 data, F2 backend, F3 frontend, F4 uji |
-`area` | `ops`, `db`, `auth`, `api`, `ui`, `test`, `doc` |
+`area` | `ops`, `db`, `auth`, `api`, `lib`, `ui`, `test`, `doc` |
 `judul` | Satu baris, kata kerja di depan |
 `depends` | ID yang harus `done` lebih dulu |
 `paths` | Daftar berkas/folder yang boleh diubah |
@@ -76,55 +76,73 @@ Satu tugas = satu commit. Format pesan: `A01: rapikan repo`.
 `evidence` | Berkas bukti |
 `status` | `todo` / `doing` / `blocked` / `done` |
 
+**Aturan `paths`.** Dua tugas yang boleh berjalan bersamaan tidak boleh punya
+`paths` yang beririsan; kalau beririsan, kerjakan berurutan. Karena itu `paths`
+ditulis sepersempit mungkin: satu tugas tidak boleh memegang folder akar
+(`src/app/**`) hanya karena ia membuat foldernya. Beririsan dengan tugas yang
+sudah `done` tidak dihitung, sebab berkas itu sudah tidak akan disentuh lagi.
+
+**Berkas bersama.** Tiga berkas ini dipakai hampir semua tugas, jadi tugas yang
+menyentuhnya **tidak boleh paralel** meski satu fase: `package.json`,
+`src/db/schema/index.ts`, dan `src/db/migrations/**`. Tugas yang hanya membaca
+tidak perlu menyentuhnya.
+
 ---
 
 ## 3. Daftar tugas
 
-| ID | Judul | Depends | Status |
-|---|---|---|---|
-| A01 | Rapikan repo kode | — | todo |
-| A02 | Scaffold Next.js + Tailwind + TS strict | A01 | todo |
-| A03 | Env tervalidasi + `.env.example` | A02 | todo |
-| A04 | Drizzle + koneksi + migrasi awal | A03 | todo |
-| A05 | Skema `users` dan `sessions` | A04 | todo |
-| A06 | Auth inti + cookie sesi + guard | A05 | todo |
-| A07 | Format respons API baku | A06 | todo |
-| A08 | Runner Vitest + Playwright | A02 | todo |
-| A09 | CI + deploy skeleton | A06, A08 | todo |
-| A10 | Skema domain klinik | A05 | todo |
-| A11 | Skema domain pasien | A10 | todo |
-| A12 | Indeks, constraint, append-only | A11 | todo |
-| A13 | Seed admin + data fiktif | A12 | todo |
-| A14 | Modul waktu WIB + uji | A04 | todo |
-| A15 | Kontrak API v1 | A07, A12 | todo |
-| A16 | Dokumen skema database | A12 | todo |
-| B01 | FR-07 API auth + guard peran | A06, A15 | todo |
-| B02 | FR-01 profil pasien | B01 | todo |
-| B03 | FR-03 slot + janji + anti-bentrok | B02, A14 | todo |
-| B04 | FR-08 usulan + TTL + pembatalan | B03 | todo |
-| B05 | FR-09 notifikasi + jawaban | B04 | todo |
-| B06 | FR-10 audit log append-only | B04 | todo |
-| B07 | FR-04 antrian estimasi/final + tutup hari | B03, B06 | todo |
-| B08 | FR-02 jadwal berulang + pengingat | B03, A14 | todo |
-| B09 | FR-12 resep + kepatuhan obat | B03, A15 | todo |
-| B10 | FR-13 timeline kunjungan | B07, B09 | todo |
-| B11 | FR-05 kebiasaan + ringkasan | B02 | todo |
-| B12 | FR-14 log aktivitas (opsional) | B01 | todo |
-| B13 | FR-06 panel konten statis (opsional) | B02 | todo |
-| C01 | Layout + token + komponen dasar | A02 | todo |
-| C02 | Layar publik + masuk + daftar | C01, B01 | todo |
-| C03 | Profil + jadwal kontrol | C02, B02, B08 | todo |
-| C04 | Janji + antrian | C03, B03, B07 | todo |
-| C05 | Obat + timeline + notifikasi + aktivitas | C04, B09, B10 | todo |
-| C06 | Admin K1–K4 | C02, B04, B07 | todo |
-| C07 | Admin K5–K7 | C06, B06, B09 | todo |
-| C08 | State, aksesibilitas, responsif | C02–C07 | todo |
-| D01 | Integration test per FR | B01–B11 | todo |
-| D02 | Security test | B01–B11 | todo |
-| D03 | E2E 10 langkah | C08, D01 | todo |
-| D04 | Uji beban autocannon | D03 | todo |
-| D05 | UAT + SUS | D03 | todo |
-| D06 | Bukti uji + deploy final | D01–D05 | todo |
+| ID  | Judul                                     | Depends       | Status |
+| --- | ----------------------------------------- | ------------- | ------ |
+| A01 | Rapikan repo kode                         | —             | todo   |
+| A02 | Scaffold Next.js + Tailwind + TS strict   | A01           | todo   |
+| A03 | Env tervalidasi + `.env.example`          | A02           | todo   |
+| A04 | Drizzle + koneksi + migrasi awal          | A03           | todo   |
+| A05 | Skema `users` dan `sessions`              | A04           | todo   |
+| A06 | Auth inti + cookie sesi + guard           | A05           | todo   |
+| A07 | Format respons API baku                   | A06           | todo   |
+| A08 | Runner Vitest + Playwright                | A02           | todo   |
+| A09 | CI + deploy skeleton                      | A06, A08      | todo   |
+| A10 | Skema domain klinik                       | A05           | todo   |
+| A11 | Skema domain pasien                       | A10           | todo   |
+| A12 | Indeks, constraint, append-only           | A11           | todo   |
+| A13 | Seed admin + data fiktif                  | A12           | todo   |
+| A14 | Modul waktu WIB + uji                     | A04           | todo   |
+| A15 | Kontrak API v1                            | A07, A12      | todo   |
+| A16 | Dokumen skema database                    | A12           | todo   |
+| B01 | FR-07 API auth + guard peran              | A06, A15      | todo   |
+| B02 | FR-01 profil pasien                       | B01           | todo   |
+| B03 | FR-03 slot + janji + anti-bentrok         | B02, A14      | todo   |
+| B04 | FR-08 usulan + TTL + pembatalan           | B03           | todo   |
+| B05 | FR-09 notifikasi + jawaban                | B04           | todo   |
+| B06 | FR-10 audit log append-only               | B04           | todo   |
+| B07 | FR-04 antrian estimasi/final + tutup hari | B03, B06      | todo   |
+| B08 | FR-02 jadwal berulang + pengingat         | B03, A14      | todo   |
+| B09 | FR-12 resep + kepatuhan obat              | B03, A15      | todo   |
+| B10 | FR-13 timeline kunjungan                  | B07, B09      | todo   |
+| B11 | FR-05 kebiasaan + ringkasan               | B02           | todo   |
+| B12 | FR-14 log aktivitas (opsional)            | B01           | todo   |
+| B13 | FR-06 panel konten statis (opsional)      | B02           | todo   |
+| C01 | Layout + token + komponen dasar           | A02           | todo   |
+| C02 | Layar publik + masuk + daftar             | C01, B01      | todo   |
+| C03 | Profil + jadwal kontrol                   | C02, B02, B08 | todo   |
+| C04 | Janji + antrian                           | C03, B03, B07 | todo   |
+| C05 | Obat + timeline + notifikasi + aktivitas  | C04, B09, B10 | todo   |
+| C06 | Admin K1–K4                               | C02, B04, B07 | todo   |
+| C07 | Admin K5-K7                               | C06, B06, B09 | todo   |
+| C08 | State, aksesibilitas, responsif           | C02-C07, C09  | todo   |
+| C09 | Kebiasaan harian + ringkasan kepatuhan    | C03, B11      | todo   |
+| D01 | Integration test per FR                   | B01-B11       | todo   |
+| D02 | Security test                             | B01–B11       | todo   |
+| D03 | E2E 10 langkah                            | C08, D01      | todo   |
+| D04 | Uji beban autocannon                      | D03           | todo   |
+| D05 | UAT + SUS                                 | D03           | todo   |
+| D06 | Bukti uji + deploy final                  | D01-D05       | todo   |
+
+> **P12 (panel konten statis) tidak dibangun.** Layar itu satu-satunya wujud
+> FR-06, dan FR-06 adalah kandidat potong kedua di `to-do.md` bagian 5. Tugas
+> backend `B13` tetap ada sebagai opsional, tetapi tidak ada tugas frontend
+> untuk P12. Bila nanti dibangun, tambahkan tugas baru dengan `paths`
+> `src/app/(pasien)/konten/**`; jangan menyelipkannya ke C09.
 
 ---
 
@@ -162,12 +180,14 @@ tasks:
     area: ops
     judul: Scaffold Next.js App Router dengan Tailwind dan TypeScript strict
     depends: [A01]
-    paths: ["package.json", "package-lock.json", "next.config.ts", "tsconfig.json", "postcss.config.mjs", "src/app/**", "src/components/**", "src/styles/**"]
+    paths: ["package.json", "package-lock.json", "next.config.ts", "tsconfig.json", "postcss.config.mjs", "eslint.config.mjs", "src/app/layout.tsx", "src/app/page.tsx", "src/app/globals.css"]
     input: ["saran/yang-perlu-diinstal.md §4b"]
     langkah:
       - Jalankan create-next-app dengan App Router, src dir, alias @/*, npm, Tailwind
       - Set strict true dan noUncheckedIndexedAccess true
       - Hapus boilerplate yang tidak dipakai
+      - Boleh membuat folder kosong di bawah src/app, tetapi tidak mengisi berkas di luar paths ini
+      - Warna, token, dan komponen dasar bukan milik tugas ini; itu C01
     accept:
       - npm run dev hidup di port 3000
       - npm run build sukses
@@ -371,12 +391,13 @@ tasks:
     area: db
     judul: Seed admin individual dan data fiktif
     depends: [A12]
-    paths: ["src/db/seed/**", "package.json"]
+    paths: ["src/db/seed/admin.ts", "src/db/seed/klinik.ts", "src/db/seed/pasien.ts", "src/db/seed/index.ts", "package.json"]
     input: ["prd-v0.3 §4.2 Privacy"]
     langkah:
       - Dua akun admin terpisah
       - Dokter dan slot contoh
       - Pasien fiktif dengan riwayat, tanpa data nyata
+      - Tidak membuat src/db/seed/konten.ts; berkas itu milik B13
     accept:
       - npm run db:seed idempoten
       - Admin bisa login setelah seed
@@ -736,7 +757,7 @@ tasks:
     judul: Janji dan antrian
     depends: [C03, B03, B07]
     paths: ["src/app/(pasien)/janji/**", "src/app/(pasien)/antrian/**"]
-    input: ["design/02-wireframe-pasien.md P9–P12"]
+    input: ["design/02-wireframe-pasien.md P9"]
     accept:
       - Nomor estimasi berlabel perkiraan
       - Nomor final tampil setelah check-in
@@ -765,7 +786,7 @@ tasks:
     area: ui
     judul: Area admin K1–K4
     depends: [C02, B04, B07]
-    paths: ["src/app/(admin)/admin/**"]
+    paths: ["src/app/(admin)/admin/layout.tsx", "src/app/(admin)/admin/page.tsx", "src/app/(admin)/admin/janji/**", "src/app/(admin)/admin/antrian/**", "src/app/(admin)/admin/slot/**", "src/app/(admin)/admin/aturan-kontrol/**"]
     input: ["design/03-wireframe-klinik.md K1–K4"]
     accept:
       - Pasien ditolak dari seluruh rute admin
@@ -794,8 +815,8 @@ tasks:
     fase: F3
     area: ui
     judul: State, aksesibilitas, dan responsif
-    depends: [C02, C03, C04, C05, C06, C07]
-    paths: ["src/components/**", "src/app/**"]
+    depends: [C02, C03, C04, C05, C06, C07, C09]
+    paths: ["src/components/**", "src/styles/**", "src/app/(publik)/**", "src/app/(pasien)/**", "src/app/(admin)/**"]
     input: ["design/04-state-dan-copy.md"]
     accept:
       - Loading, galat, kosong, sukses ada di semua layar inti
@@ -806,7 +827,30 @@ tasks:
     evidence: "docs/03-system-uat/C08.md"
     status: todo
 
-  # ================= F4 — UJI & RILIS =================
+  - id: C09
+    fase: F3
+    area: ui
+    judul: Layar kebiasaan harian dan ringkasan kepatuhan
+    depends: [C03, B11]
+    paths: ["src/app/(pasien)/kebiasaan/**"]
+    input: ["design/02-wireframe-pasien.md P10-P11", "prd-v0.3 FR-05"]
+    langkah:
+      - Form catatan hari ini dengan pengatur tambah/kurang untuk air minum dan aktivitas
+      - Jam tidur mulai dan bangun, durasi dihitung di layar
+      - Riwayat 7 hari di bagian bawah layar yang sama
+      - Layar ringkasan di kebiasaan/ringkasan: persentase, runtutan, rincian per jenis
+      - Tanggal hanya hari ini; hari lampau dibaca lewat riwayat, bukan isian bebas
+    accept:
+      - Jam di luar 00.00-23.59 ditolak dengan naskah "Jam harus antara 00.00 dan 23.59"
+      - Isian bukan angka ditolak dengan naskah "Isi jam dengan angka, contoh 22.30"
+      - Semua angka ringkasan dapat dihitung ulang dari data yang tampil
+      - State kosong menampilkan "Belum ada catatan. Mulai dari hari ini." beserta tombolnya
+      - Tidak membuat layar konten statis; P12 tidak dibangun
+    verify: ["npm run build", "npm run test:e2e"]
+    evidence: "docs/03-system-uat/C09.md"
+    status: todo
+
+  # ================= F4 - UJI & RILIS =================
 
   - id: D01
     fase: F4
@@ -826,7 +870,7 @@ tasks:
     fase: F4
     area: test
     judul: Security test
-    depends: [B01, B02, B03, B04, B05, B06, B07]
+    depends: [B01, B02, B03, B04, B05, B06, B07, B08, B09, B10, B11]
     paths: ["tests/security/**"]
     input: ["prd-v0.3 §4.2 Security"]
     accept:
@@ -858,8 +902,9 @@ tasks:
     judul: Uji beban autocannon
     depends: [D03]
     paths: ["tests/performance/**", "package.json"]
+    input: ["prd-v0.3 4.2 Performance"]
     accept:
-      - 50–100 permintaan bersamaan pada janji dan antrian
+      - 50-100 permintaan bersamaan pada janji dan antrian
       - p95 di bawah 2 detik tercatat
     verify: ["npx autocannon --help"]
     evidence: "docs/05-bukti-performa/D04.md"
@@ -871,6 +916,7 @@ tasks:
     judul: UAT dan kuesioner SUS
     depends: [D03]
     paths: ["tests/uat/**", "docs/03-system-uat/**"]
+    input: ["prd-v0.3 7.4", "design/01-peta-alur.md"]
     accept:
       - Skrip UAT bertanda tangan minimal satu penguji luar
       - Skor SUS dihitung
@@ -884,6 +930,7 @@ tasks:
     judul: Bukti uji lengkap dan deploy final
     depends: [D01, D02, D03, D04, D05]
     paths: ["docs/**", "README.md"]
+    input: ["prd-v0.3 7.4"]
     accept:
       - Lima folder bukti terisi
       - Hosting final hidup 2 Nov 2026
@@ -902,7 +949,7 @@ tasks:
 | **G0** | Skeleton hidup di Vercel, `npm test` hijau, admin bisa login | A09 |
 | **G1** | Migrasi lengkap, seed jalan, kontrak API tertulis | A16 |
 | **G2** | Uji rebutan slot lulus, uji ID URL lulus, audit log terbukti | D01 + D02 |
-| **G3** | Seluruh alur inti selesai lewat UI | C08 |
+| **G3** | Seluruh alur inti selesai lewat UI | C01-C09 |
 | **G4** | Deploy final, bukti lengkap, UAT bertanda tangan | D06 |
 
 Bila gerbang gagal: potong sesuai urutan di `to-do.md` §5. Jangan kurangi uji.

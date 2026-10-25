@@ -126,7 +126,7 @@ BUTUH: <keputusan atau berkas>
 |---|---|
 | Ringkasan produk 1 halaman | `docs/rancangan/ringkasan-proyek.md` |
 | Aturan & gerbang | `docs/rancangan/to-do.md` |
-| Detail 43 tugas | `docs/rancangan/rencana-agen.md` |
+| Detail 44 tugas | `docs/rancangan/rencana-agen.md` |
 | Potongan PRD per FR | `docs/peta-bagian.md` |
 | Status tugas | `docs/status-tugas.md` |
 | Kontrak API | `docs/api-contract.md` (dibuat tugas A15) |

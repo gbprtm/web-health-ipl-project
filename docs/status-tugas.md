@@ -1,7 +1,8 @@
 # Status Tugas
 
-Satu-satunya tempat status 43 tugas ditulis. Spesifikasi tugas ada di vault:
-`brain-project/docs/to-do/rencana-agen.md` (read-only).
+Satu-satunya tempat status 44 tugas ditulis. Spesifikasi tugas ada di vault:
+`brain-project/docs/to-do/rencana-agen.md` (read-only), salinan bacanya di
+`docs/rancangan/rencana-agen.md`.
 
 Status yang sah: `todo` · `doing` · `blocked` · `done`.
 Tugas `blocked` wajib punya satu kalimat sebab di kolom catatan.
@@ -68,6 +69,7 @@ Jangan mengubah status tugas milik agen lain.
 | C06 | todo | — | — |
 | C07 | todo | — | — |
 | C08 | todo | — | — |
+| C09 | todo | — | — | layar kebiasaan P10-P11; P12 konten tidak dibangun |
 
 ## F4 — Uji dan rilis
 
@@ -84,4 +86,4 @@ Jangan mengubah status tugas milik agen lain.
 
 ## Ringkasan
 
-Diperbarui: 25 Oktober 2026 · total 43 · `todo` 42 · `doing` 0 · `blocked` 0 · `done` 1
+Diperbarui: 25 Oktober 2026 · total 44 · `todo` 43 · `doing` 0 · `blocked` 0 · `done` 1
