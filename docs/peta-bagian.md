@@ -17,8 +17,8 @@ basi saat PRD disunting.
 | FR-02 | Jadwal berulang + pengingat | `**FR-02` | P5 | `src/modules/jadwal-kontrol/` | B08 |
 | FR-03 | Spesialis + janji anti-bentrok | `**FR-03` | P6–P8 | `src/modules/janji/` | B03 |
 | FR-04 | Antrian + transisi status | `**FR-04` dan `### 3.5` | P9 | `src/modules/antrian/` | B07 |
-| FR-05 | Catatan kebiasaan | `**FR-05` | P10–P11 | `src/modules/kebiasaan/` | B11 |
-| FR-06 | Panel konten statis | `**FR-06` | P12 | `src/modules/konten/` | B13 |
+| FR-05 | Catatan kebiasaan | `**FR-05` | P10–P11 | `src/modules/kebiasaan/` | B11, C09 |
+| FR-06 | Panel konten statis | `**FR-06` | P12 | `src/modules/konten/` | B13 · UI tidak dibangun |
 | FR-07 | Auth, sesi, dua role | `**FR-07`, `Session and access`, `### 4.4` | P1–P2, K1 | `src/modules/auth/` | B01 |
 | FR-08 | Usulan perubahan admin | `**FR-08` dan `Open Questions` butir 15 | P13 | `src/modules/janji/` | B04 |
 | FR-09 | Notifikasi + tanggapan | `**FR-09` | P13 | `src/modules/notifikasi/` | B05 |
@@ -90,6 +90,6 @@ Bagian ini tidak boleh diisi agen tanpa keputusan pemilik proyek.
 
 | Celah | Dampak |
 |---|---|
-| Layar **P10, P11** (catatan kebiasaan) belum punya tugas frontend | FR-05 punya backend (B11) tapi belum ada tugas UI |
-| Layar **P12** (panel konten statis) belum punya tugas frontend | FR-06 punya backend (B13) tapi belum ada tugas UI |
+| Layar **P10, P11** (catatan kebiasaan) sudah punya tugas frontend `C09` | Ditutup 25 Oktober 2026; `C09` bergantung pada `C03` dan `B11` |
+| Layar **P12** (panel konten statis) **sengaja tidak dibangun** | FR-06 kandidat potong kedua; backend `B13` tetap opsional. Bila dibangun, tambah tugas baru dengan `paths` `src/app/(pasien)/konten/**` |
 | `design/02-wireframe-pasien.md` memuat judul ganda `## P13`, `## P14`, `## P15` | Rujukan bisa salah bagian; pakai yang memuat kode FR di judulnya |

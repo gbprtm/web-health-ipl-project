@@ -18,7 +18,7 @@ Daftar tugas lengkap ada di `docs/to-do/rencana-agen.md`.
 | **Agen Fondasi** | Agen | A01–A09 (repo, scaffold, env, database, auth, test runner, CI, deploy) |
 | **Agen Data** | Agen | A10–A16 (skema, constraint, seed, WIB, kontrak API, dokumen skema) |
 | **Agen Backend** | Agen | B01–B13 (endpoint dan uji per FR) |
-| **Agen Frontend** | Agen | C01–C08 (21 layar pasien dan admin) |
+| **Agen Frontend** | Agen | C01-C09 (15 layar pasien dan 7 layar admin; P12 tidak dibangun) |
 | **Agen QA** | Agen | D01–D06 (integration, security, e2e, beban, UAT, bukti) |
 
 Satu tugas hanya dikerjakan **satu agen**. Peran boleh berpindah agen, tetapi

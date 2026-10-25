@@ -59,7 +59,7 @@ npm run build      # Menghasilkan build produksi
 
 ## Struktur & Dokumentasi Kerja
 
-- `docs/status-tugas.md`: Papan status resmi 43 tugas proyek
+- `docs/status-tugas.md`: Papan status resmi 44 tugas proyek
 - `docs/peta-bagian.md`: Peta FR, modul kode, dan rujukan rancangan
 - `docs/rancangan/`: Salinan baca rancangan PRD v0.3, wireframe, dan arsitektur
 - `docs/01-laporan-unit/` s.d. `05-bukti-performa/`: Arsip bukti verifikasi tugas

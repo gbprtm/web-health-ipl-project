@@ -8,7 +8,8 @@ risiko) tidak disalin ke sini; letaknya di vault
 |---|---|---|
 | `rancangan/` | salinan read-only dokumen rancangan (PRD, wireframe, rencana tugas) | `scripts/sinkron-rancangan.ps1` |
 | `peta-bagian.md` | FR → potongan PRD → layar → modul kode | pemilik proyek |
-| `status-tugas.md` | status 43 tugas | agen, setiap tugas |
+| `panduan-arsitektur.md` | pembagian struktur: Frontend, Backend, dan Testing | pemilik proyek |
+| `status-tugas.md` | status 44 tugas | agen, setiap tugas |
 | `api-contract.md` | kontrak API v1 | tugas A15, lalu tiap tugas backend |
 | `database-schema.md` | skema tabel + diagram | tugas A16, lalu tiap tugas data |
 | `01-laporan-unit/` | bukti unit test per FR | tugas A* dan B* |

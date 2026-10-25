@@ -82,9 +82,10 @@ menyalin dokumen, supaya tidak ada dua versi yang melenceng.
 | Lapisan | Berkas | Fungsi |
 |---|---|---|
 | Akses | `project/opencode.jsonc` → reference `rancangan` | Agen di repo kode bisa membaca vault lewat path absolut |
-| Instruksi | `project/AGENTS.md` (126 baris) | Aturan, perintah, loop tugas, larangan |
+| Instruksi | `project/AGENTS.md` (133 baris) | Aturan, perintah, loop tugas, larangan |
 | Peta | `project/docs/peta-bagian.md` | FR → potongan PRD → layar → modul kode |
-| Status | `project/docs/status-tugas.md` | Status 43 tugas, ikut commit tiap tugas |
+| Status | `project/docs/status-tugas.md` | Status 44 tugas, ikut commit tiap tugas |
+| Salinan baca | `project/docs/rancangan/` (13 berkas) | Agar repo bisa dipahami orang lain tanpa akses ke vault; dibuat oleh `scripts/sinkron-rancangan.ps1` |
 
 Aturan satu arah:
 
@@ -93,8 +94,9 @@ Aturan satu arah:
    snapshot dan tidak diperbarui.
 3. Dokumen yang lahir dari kode (kontrak API, skema database, bukti uji)
    tinggal di repo kode, tidak disalin balik ke vault.
-4. PRD dan wireframe tidak disalin ke repo kode. Agen membaca potongan yang
-   ditunjuk `peta-bagian.md`, bukan seluruh berkas.
+4. PRD dan wireframe dibaca dari vault, atau dari salinan baca di
+   `docs/rancangan/` bila repo dibuka orang lain. Agen tetap membaca potongan
+   yang ditunjuk `peta-bagian.md`, bukan seluruh berkas.
 
 Efek pada konteks: satu tugas butuh ±3.000 token (AGENTS.md + satu blok tugas +
 satu baris peta + satu potongan PRD), bukan ±30.000 token untuk membaca PRD,
@@ -132,7 +134,7 @@ rencana, dan wireframe sekaligus.
 | **F0 Fondasi** | A01–A09 | Repo, scaffold, env, Drizzle, auth, runner test, CI, deploy skeleton | **G0**: aplikasi skeleton hidup di Vercel, `npm test` hijau |
 | **F1 Data** | A10–A16 | Skema lengkap, constraint, seed, modul WIB, kontrak API, dokumen skema | **G1**: migrasi jalan, seed admin bisa login, kontrak API tertulis |
 | **F2 Backend** | B01–B13 | Semua endpoint FR-01…FR-14 + uji per fitur | **G2**: uji rebutan slot dan uji ID URL lulus |
-| **F3 Frontend** | C01–C08 | 16 layar pasien + 7 layar admin + state + aksesibilitas | **G3**: seluruh alur inti bisa diselesaikan lewat UI |
+| **F3 Frontend** | C01-C09 | 15 layar pasien + 7 layar admin + state + aksesibilitas; P12 konten tidak dibangun | **G3**: seluruh alur inti bisa diselesaikan lewat UI |
 | **F4 Uji & rilis** | D01–D06 | Integration, security, e2e 10 langkah, beban, UAT, bukti, deploy final | **G4**: deploy final hidup, bukti uji lengkap |
 
 Urutan rinci tiap tugas, dependensi, dan kriteria terima ada di
@@ -145,6 +147,11 @@ Dua agen boleh bekerja bersamaan **hanya bila**:
 - `depends` keduanya sudah `done`, dan
 - daftar `paths` keduanya **tidak beririsan**.
 
+Beririsan dengan tugas yang sudah `done` tidak dihitung, karena berkas itu tidak
+akan disentuh lagi. Tiga berkas dipakai hampir semua tugas dan **tidak boleh
+paralel** meski satu fase: `package.json`, `src/db/schema/index.ts`, dan
+`src/db/migrations/**`.
+
 Contoh yang aman: agen backend mengerjakan B03 (folder `src/modules/janji/`)
 sementara agen frontend mengerjakan C02 (folder `src/app/(publik)/`).
 Contoh yang tidak aman: dua agen menyentuh `src/db/schema/` bersamaan.
@@ -153,11 +160,16 @@ Contoh yang tidak aman: dua agen menyentuh `src/db/schema/` bersamaan.
 
 ## 5. Urutan pemangkasan (bila G2 atau G3 gagal)
 
-1. **B12 — FR-14 log aktivitas akun.** Dihentikan.
-2. **B13 — FR-06 panel konten statis.** Dihentikan, jadi slide presentasi.
-3. **B11 — FR-05 catatan kebiasaan.** Diringkas jadi hidrasi + tidur saja.
-4. Bila masih kurang: B11 dipotong seluruhnya, cerita presentasi ditulis ulang
-   tanpa kebiasaan.
+1. **B12 - FR-14 log aktivitas akun.** Dihentikan.
+2. **B13 - FR-06 panel konten statis.** Dihentikan, jadi slide presentasi.
+3. **B11 - FR-05 catatan kebiasaan.** Diringkas jadi hidrasi + tidur saja;
+   C09 ikut diringkas ke dua jenis itu.
+4. Bila masih kurang: B11 dan C09 dipotong seluruhnya, cerita presentasi ditulis
+   ulang tanpa kebiasaan.
+
+**FR-06 (P12 panel konten statis) tidak dibangun sejak awal.** Layar itu tidak
+punya tugas frontend; bila nanti dibangun, tambahkan tugas baru dengan `paths`
+`src/app/(pasien)/konten/**`. Pemotongannya tidak mengubah jumlah tugas C.
 
 **Tidak boleh dipotong dalam keadaan apa pun:** B01, B03, B04, B05, B06, B09,
 B10 (FR-07, FR-03, FR-08, FR-09, FR-10, FR-12, FR-13).

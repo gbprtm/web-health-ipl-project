@@ -30,6 +30,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # OS & Editor
+*.exe
 .DS_Store
 Thumbs.db
 *.pem
@@ -39,6 +40,8 @@ Thumbs.db
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+opencode.json
+opencode.jsonc
 
 # Turbo
 .turbo
