@@ -20,7 +20,7 @@ Jangan mengubah status tugas milik agen lain.
 | A01 | done | f14d535 | — |
 | A02 | done | 251524b | — |
 | A03 | done | 424e2ab | — |
-| A04 | todo | — | — |
+| A04 | done | 4c67f56 | — |
 | A05 | todo | — | — |
 | A06 | todo | — | — |
 | A07 | todo | — | — |
