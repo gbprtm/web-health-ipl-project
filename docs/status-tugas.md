@@ -18,10 +18,10 @@ Jangan mengubah status tugas milik agen lain.
 | ID | Status | Commit | Catatan |
 |---|---|---|---|
 | A01 | done | f14d535 | — |
-| A02 | todo | — | — |
-| A03 | todo | — | — |
-| A04 | todo | — | — |
-| A05 | todo | — | — |
+| A02 | done | 251524b | — |
+| A03 | done | 424e2ab | — |
+| A04 | done | eff355a | — |
+| A05 | done | f46ac33 | — |
 | A06 | todo | — | — |
 | A07 | todo | — | — |
 | A08 | todo | — | — |
