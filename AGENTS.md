@@ -3,7 +3,6 @@
 Aplikasi pengelola kesehatan personal (pasien + klinik).
 Stack terkunci: Next.js App Router, TypeScript strict, PostgreSQL (Neon), Drizzle,
 zod, Tailwind, Vitest, Playwright. Bahasa antarmuka: Indonesia.
-Tenggat hosting: **2 November 2026**.
 
 Berkas ini untuk sesi yang dibuka di **repo kode**. Sesi di vault memakai
 `brain-project/AGENTS.md`.
