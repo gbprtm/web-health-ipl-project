@@ -32,7 +32,7 @@ Jangan mengubah status tugas milik agen lain.
 | ID | Status | Commit | Catatan |
 |---|---|---|---|
 | A10 | done | a10db | — |
-| A11 | todo | — | — |
+| A11 | done | a11db | — |
 | A12 | todo | — | — |
 | A13 | todo | — | — |
 | A14 | todo | — | — |
@@ -86,4 +86,4 @@ Jangan mengubah status tugas milik agen lain.
 
 ## Ringkasan
 
-Diperbarui: 28 Oktober 2026 · total 44 · `todo` 34 · `doing` 0 · `blocked` 0 · `done` 10
+Diperbarui: 28 Oktober 2026 · total 44 · `todo` 33 · `doing` 0 · `blocked` 0 · `done` 11
