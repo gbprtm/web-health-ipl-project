@@ -8,6 +8,13 @@
       "when": 1792945581921,
       "tag": "0000_faithful_ultimates",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793184963526,
+      "tag": "0001_spooky_ken_ellis",
+      "breakpoints": true
     }
   ]
 }
