@@ -24,7 +24,7 @@ Jangan mengubah status tugas milik agen lain.
 | A05 | done | f46ac33 | — |
 | A06 | done | c06auth | — |
 | A07 | done | a07api | — |
-| A08 | todo | — | — |
+| A08 | done | a08test | — |
 | A09 | todo | — | — |
 
 ## F1 — Data
@@ -86,4 +86,4 @@ Jangan mengubah status tugas milik agen lain.
 
 ## Ringkasan
 
-Diperbarui: 28 Oktober 2026 · total 44 · `todo` 37 · `doing` 0 · `blocked` 0 · `done` 7
+Diperbarui: 28 Oktober 2026 · total 44 · `todo` 36 · `doing` 0 · `blocked` 0 · `done` 8

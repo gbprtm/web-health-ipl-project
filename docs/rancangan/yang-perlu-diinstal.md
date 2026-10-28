@@ -239,11 +239,8 @@ npm install -D drizzle-kit tsx vitest @vitejs/plugin-react vite-tsconfig-paths \
 
 ### 4e. Browser untuk Playwright
 
-```bash
-npx playwright install chromium
-```
-
-Di Windows jangan pakai `--with-deps`; itu untuk Linux.
+Tidak perlu mengunduh biner Chromium terpisah (`npx playwright install chromium`).
+Playwright dikonfigurasi untuk langsung menggunakan browser Chromium bawaan sistem (seperti Google Chrome / Arc / Edge) melalui opsi `channel: "chrome"` pada `playwright.config.ts`. Hal ini menghemat ruang disk (~200 MB) dan mempercepat setup.
 
 ### 4f. Deploy tanpa Vercel CLI
 
