@@ -23,7 +23,7 @@ Jangan mengubah status tugas milik agen lain.
 | A04 | done | eff355a | — |
 | A05 | done | f46ac33 | — |
 | A06 | done | c06auth | — |
-| A07 | todo | — | — |
+| A07 | done | a07api | — |
 | A08 | todo | — | — |
 | A09 | todo | — | — |
 
@@ -86,4 +86,4 @@ Jangan mengubah status tugas milik agen lain.
 
 ## Ringkasan
 
-Diperbarui: 27 Oktober 2026 · total 44 · `todo` 38 · `doing` 0 · `blocked` 0 · `done` 6
+Diperbarui: 28 Oktober 2026 · total 44 · `todo` 37 · `doing` 0 · `blocked` 0 · `done` 7
