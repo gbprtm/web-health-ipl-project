@@ -1,15 +1,8 @@
-import { describe, it, expect } from "vitest";
+import { describe, it } from "vitest";
 
+// Kerangka uji integrasi untuk D01. Sebelumnya berkas ini hanya menguji array
+// literal, bukan perilaku transisi status di database.
 describe("Uji Integrasi: Transisi Status Antrian Klinik", () => {
-  it("harus mengikuti urutan status: belum_check_in -> menunggu -> diperiksa -> selesai", () => {
-    const urutanStatus = [
-      "belum_check_in",
-      "menunggu",
-      "diperiksa",
-      "selesai",
-    ];
-    expect(urutanStatus.length).toBe(4);
-    expect(urutanStatus[0]).toBe("belum_check_in");
-  });
+  it.todo("mengikuti urutan belum_check_in -> menunggu -> diperiksa -> selesai");
+  it.todo("menolak lompatan status, misalnya belum_check_in -> selesai");
 });
-

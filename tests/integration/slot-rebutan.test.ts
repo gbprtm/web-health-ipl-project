@@ -1,10 +1,10 @@
-import { describe, it, expect } from "vitest";
+import { describe, it } from "vitest";
 
+// Kerangka uji integrasi untuk D01. Sebelumnya berkas ini berisi
+// `expect(true).toBe(true)` yang selalu hijau tanpa menguji apa pun.
+// Diubah menjadi `todo` agar tidak dihitung sebagai bukti sampai transaksi
+// database sungguhan ditulis.
 describe("Uji Integrasi: Rebutan Slot Dokter (Anti-Bentrok)", () => {
-  it("harus menolak pemesanan kedua jika slot sudah diambil oleh pasien lain", async () => {
-    // Skenario integrasi transaksi database untuk mencegah double booking
-    const slotTersedia = true;
-    expect(slotTersedia).toBe(true);
-  });
+  it.todo("menolak pemesanan kedua jika slot sudah diambil pasien lain");
+  it.todo("mengizinkan pemesanan ulang setelah janji pertama dibatalkan");
 });
-

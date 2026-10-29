@@ -10,6 +10,7 @@ risiko) tidak disalin ke sini; letaknya di vault
 | `peta-bagian.md` | FR → potongan PRD → layar → modul kode | pemilik proyek |
 | `panduan-arsitektur.md` | pembagian struktur: Frontend, Backend, dan Testing | pemilik proyek |
 | `status-tugas.md` | status 44 tugas | agen, setiap tugas |
+| `keputusan/` | catatan keputusan (ADR) yang menyimpang dari rancangan | pemilik proyek + agen |
 | `api-contract.md` | kontrak API v1 | tugas A15, lalu tiap tugas backend |
 | `database-schema.md` | skema tabel + diagram | tugas A16, lalu tiap tugas data |
 | `01-laporan-unit/` | bukti unit test per FR | tugas A* dan B* |

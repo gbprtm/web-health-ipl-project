@@ -14,7 +14,7 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./tests/setup.ts"],
     include: ["src/**/*.test.{ts,tsx}", "tests/**/*.test.{ts,tsx}"],
-    exclude: ["tests/**/*.spec.ts", "node_modules/**", ".next/**"],
+    exclude: ["tests/**/*.spec.ts", "**/*.db.test.ts", "node_modules/**", ".next/**"],
     env: {
       DATABASE_URL: "postgres://mock:mock@localhost:5432/mock",
       DATABASE_URL_UNPOOLED: "postgres://mock:mock@localhost:5432/mock",

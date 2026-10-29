@@ -19,22 +19,22 @@ Jangan mengubah status tugas milik agen lain.
 |---|---|---|---|
 | A01 | done | f14d535 | — |
 | A02 | done | 251524b | — |
-| A03 | done | 424e2ab | — |
+| A03 | done | 14c8dbf | — |
 | A04 | done | eff355a | — |
-| A05 | done | f46ac33 | — |
-| A06 | done | c06auth | — |
-| A07 | done | a07api | — |
-| A08 | done | a08test | — |
-| A09 | done | a09ops | — |
+| A05 | done | b92a1d8 | — |
+| A06 | done | 1707688 | — |
+| A07 | done | d504eb8 | — |
+| A08 | done | 53c3b62 | — |
+| A09 | blocked | 90bc13e | accept hosting belum terbukti: URL Vercel dan handler login belum ada |
 
 ## F1 — Data
 
 | ID | Status | Commit | Catatan |
 |---|---|---|---|
-| A10 | done | a10db | — |
-| A11 | done | a11db | — |
-| A12 | done | e3632e0 | — |
-| A13 | done | a387f7b | — |
+| A10 | done | dac5b94 | — |
+| A11 | done | 9b6db0d | — |
+| A12 | done | 347cb12 | commit memuat berkas di luar `paths`; dicatat di A12.md |
+| A13 | done | 5c1add3 | commit 8ef5fe7 hanya menambah newline, bukan bukti |
 | A14 | todo | — | — |
 | A15 | todo | — | — |
 | A16 | todo | — | — |
@@ -86,4 +86,4 @@ Jangan mengubah status tugas milik agen lain.
 
 ## Ringkasan
 
-Diperbarui: 28 Oktober 2026 · total 44 · `todo` 33 · `doing` 0 · `blocked` 0 · `done` 11
+Diperbarui: 29 Oktober 2026 · total 44 · `todo` 31 · `doing` 0 · `blocked` 1 · `done` 12
