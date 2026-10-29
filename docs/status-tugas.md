@@ -34,7 +34,7 @@ Jangan mengubah status tugas milik agen lain.
 | A10 | done | a10db | — |
 | A11 | done | a11db | — |
 | A12 | done | e3632e0 | — |
-| A13 | todo | — | — |
+| A13 | done | a387f7b | — |
 | A14 | todo | — | — |
 | A15 | todo | — | — |
 | A16 | todo | — | — |
