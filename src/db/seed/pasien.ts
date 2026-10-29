@@ -130,3 +130,4 @@ export async function seedPasien(): Promise<SeedPasienResult> {
 
   return { pasienIds };
 }
+

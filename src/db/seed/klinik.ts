@@ -105,3 +105,4 @@ export async function seedKlinik(): Promise<SeedKlinikResult> {
 
   return { dokterIds, slotIds };
 }
+

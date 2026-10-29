@@ -17,3 +17,4 @@ describe("Tugas A13: Seed Admin Individual dan Data Fiktif", () => {
     expect(contohNik.includes("00000000")).toBe(true);
   });
 });
+

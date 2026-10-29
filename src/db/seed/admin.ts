@@ -54,3 +54,4 @@ export async function seedAdmin(): Promise<SeedAdminResult> {
     admin2Id: ids[1] ?? "",
   };
 }
+
