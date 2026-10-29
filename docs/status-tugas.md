@@ -33,7 +33,7 @@ Jangan mengubah status tugas milik agen lain.
 |---|---|---|---|
 | A10 | done | a10db | — |
 | A11 | done | a11db | — |
-| A12 | todo | — | — |
+| A12 | done | e3632e0 | — |
 | A13 | todo | — | — |
 | A14 | todo | — | — |
 | A15 | todo | — | — |

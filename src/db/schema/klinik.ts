@@ -6,11 +6,13 @@ import {
   timestamp,
   pgEnum,
   index,
+  uniqueIndex,
   boolean,
   integer,
   jsonb,
   date,
 } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 import { users } from "./auth";
 
 // Enum siklus status janji sesuai PRD §3.4
@@ -109,6 +111,9 @@ export const janji = pgTable(
     index("janji_dokter_idx").on(table.dokterId),
     index("janji_slot_idx").on(table.slotId),
     index("janji_status_idx").on(table.status),
+    uniqueIndex("janji_slot_aktif_unique_idx")
+      .on(table.slotId)
+      .where(sql`${table.status} = 'aktif'`),
   ]
 );
 

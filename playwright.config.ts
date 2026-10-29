@@ -1,12 +1,13 @@
 import { defineConfig, devices } from "@playwright/test";
 
 /**
- * Konfigurasi Playwright untuk pengujian end-to-end (E2E).
+ * Konfigurasi Playwright untuk pengujian end-to-end (E2E), sistem, dan keamanan.
  * Dikonfigurasi menggunakan browser Chrome bawaan sistem (channel: 'chrome')
  * sehingga tidak memerlukan unduhan biner Chromium tambahan.
  */
 export default defineConfig({
-  testDir: "./tests/e2e",
+  testDir: "./tests",
+  testMatch: ["**/*.spec.ts"],
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

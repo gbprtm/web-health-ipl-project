@@ -11,6 +11,7 @@ import {
   integer,
   date,
 } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 import { users } from "./auth";
 import { dokter, janji, aturanKontrol } from "./klinik";
 
@@ -129,6 +130,9 @@ export const tiketAntrian = pgTable(
     index("tiket_antrian_pasien_idx").on(table.pasienId),
     index("tiket_antrian_tanggal_idx").on(table.tanggal),
     index("tiket_antrian_status_idx").on(table.status),
+    uniqueIndex("tiket_antrian_tanggal_nomor_final_unique_idx")
+      .on(table.tanggal, table.nomorAntrianFinal)
+      .where(sql`${table.nomorAntrianFinal} IS NOT NULL`),
   ]
 );
 

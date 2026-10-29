@@ -3,12 +3,13 @@ node_modules/
 /.pnp
 .pnp.*
 
-# Next.js
+# Next.js Build & Outputs
 .next/
 out/
 build/
 dist/
 *.tsbuildinfo
+next-env.d.ts.bak
 
 # Environment files
 .env*
@@ -21,8 +22,9 @@ coverage/
 test-results/
 playwright-report/
 blob-report/
+.playwright/
 
-# Logs
+# Logs & Debug
 logs
 *.log
 npm-debug.log*
@@ -42,7 +44,9 @@ Thumbs.db
 !.vscode/launch.json
 !.vscode/extensions.json
 opencode.json
-opencode.jsonc
 
-# Turbo
+# Cache & Temporary
 .turbo
+.cache
+tmp/
+temp/
