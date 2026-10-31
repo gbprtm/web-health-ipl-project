@@ -1,6 +1,6 @@
 # AGENTS.md — web-health-ipl-project
 
-Aplikasi pengelola kesehatan personal (pasien + klinik).
+Website pengelola kesehatan personal berbasis browser (pasien + klinik), bukan aplikasi mobile/native.
 Stack terkunci: Next.js App Router, TypeScript strict, PostgreSQL (Neon), Drizzle,
 zod, Tailwind, Vitest, Playwright. Bahasa antarmuka: Indonesia.
 
