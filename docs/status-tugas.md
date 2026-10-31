@@ -35,9 +35,9 @@ Jangan mengubah status tugas milik agen lain.
 | A11 | done | 9b6db0d | — |
 | A12 | done | 347cb12 | commit memuat berkas di luar `paths`; dicatat di A12.md |
 | A13 | done | 5c1add3 | commit 8ef5fe7 hanya menambah newline, bukan bukti |
-| A14 | doing | — | — |
-| A15 | doing | — | — |
-| A16 | doing | — | — |
+| A14 | done | 8fbe462 | — |
+| A15 | done | 8fbe462 | — |
+| A16 | done | 8fbe462 | — |
 
 ## F2 — Backend
 
